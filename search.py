@@ -19,8 +19,6 @@ def search(data, search_str):
             json_data = json.dumps(v)
             if search_str in json_data:
                 results.append((k,v))
-    else:
-        print('search error: data is unsupported type')
     return results, root
                 
 def path_builder(path):
