@@ -38,3 +38,11 @@ path: ['flag']['missing'][1]['feed']['useful'][0][2]['mad'][1][3]['offer'][2]['w
 test: eval(data['flag']['missing'][1]['feed']['useful'][0][2]['mad'][1][3]['offer'][2]['widely'][6]['worried'][0]['country'][1]['treated']['ancient']['use'][2][1]['adjective'][1]['cookies'][3]['pine'][3]['cage']['brown'])
 results: -1802407040
 ```
+### looking for unique json snippet of nested key value pair
+```
+$ python search.py random.json 'describe":false'
+search for: 'describe":false'
+path: ['flag']['missing'][1]['feed']['useful'][0][2]['mad'][1][3]['offer'][2]['widely'][6]['worried'][0]['country'][1]['treated']['ancient']['use'][2][1]['adjective'][1]['cookies'][3]['pine'][3]['cage']['electric'][1][3]['sleep'][0][6]['speak'][1]['unusual'][1][2][0]['call'][2]['standard'][3]['character'][0][1][0][0][2][0][0]['leaving']
+test: eval(data['flag']['missing'][1]['feed']['useful'][0][2]['mad'][1][3]['offer'][2]['widely'][6]['worried'][0]['country'][1]['treated']['ancient']['use'][2][1]['adjective'][1]['cookies'][3]['pine'][3]['cage']['electric'][1][3]['sleep'][0][6]['speak'][1]['unusual'][1][2][0]['call'][2]['standard'][3]['character'][0][1][0][0][2][0][0]['leaving'])
+results: {"describe":false,"slipped":"building","youth":{"anywhere":"job","horn":"football","straw":{"contain":{"may":-1533795553,"doing":{"every":-1848240256,"village":"football","wall":"safe","wrapped":true,"twenty":true,"adventure":true,"lamp":true,"upward":true,"summer":"carried","pilot":612043998.6392999},"wear":true,"mad":-779925876.646755,"donkey":"excited","growth":"flat","explore":"cream","throughout":false,"flame":"material","position":"leaf"},"function":-1185763982,"silver":"made","independent":-2144472501.2513127,"nor":false,"settlers":"wooden","signal":600681625,"garden":2104249424,"stronger":-1605066211,"line":false},"satisfied":"history","both":-34816053,"leg":"labor","act":"nodded","dangerous":"tonight","matter":"therefore","yet":648005295.1524227},"crop":2113432219.7696257,"smaller":true,"union":"explain","tonight":-1667947886,"stepped":61332406.91567421,"blanket":-712194171,"program":true}
+```
