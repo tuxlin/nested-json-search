@@ -23,16 +23,22 @@ results: {"a":{"b":["c","d","e",{"f":"g","h":"i"}]},"j":{"k":{"l":{"m":{"n":["o"
 
 ### looking for unique nested value in random.json
 ```
-$ python search.py random.json '-1802407040'
+$ python search.py random_with_arrays.json '-1802407040'
 search for: '-1802407040'
 path: ['flag']['missing'][1]['feed']['useful'][0][2]['mad'][1][3]['offer'][2]['widely'][6]['worried'][0]['country'][1]['treated']['ancient']['use'][2][1]['adjective'][1]['cookies'][3]['pine'][3]['cage']['brown']
 test: eval(data['flag']['missing'][1]['feed']['useful'][0][2]['mad'][1][3]['offer'][2]['widely'][6]['worried'][0]['country'][1]['treated']['ancient']['use'][2][1]['adjective'][1]['cookies'][3]['pine'][3]['cage']['brown'])
 results: -1802407040
+
+python search.py random.json milk
+search for: 'milk'
+path: ['tonight']['southern']['size']['shut']['nature']['alone']['language']['share']['molecular']['like']['western']['command']['eventually']['tank']['kill']['himself']['danger']['border']['hand']['easier']['food']['door']['attached']['thee']['surface']['unit']['large']['produce']['loose']['mine']['trade']['question']['me']['two']['week']['nobody']['wood']['dried']['local']['view']['reader']['fox']['carbon']
+test: eval(data['tonight']['southern']['size']['shut']['nature']['alone']['language']['share']['molecular']['like']['western']['command']['eventually']['tank']['kill']['himself']['danger']['border']['hand']['easier']['food']['door']['attached']['thee']['surface']['unit']['large']['produce']['loose']['mine']['trade']['question']['me']['two']['week']['nobody']['wood']['dried']['local']['view']['reader']['fox']['carbon'])
+results: "milk"
 ```
 
 ### looking for unique partial string of nested value
 ```
-$ python search.py random.json '024070'
+$ python search.py random_with_arrays.json '024070'
 search for: '024070'
 path: ['flag']['missing'][1]['feed']['useful'][0][2]['mad'][1][3]['offer'][2]['widely'][6]['worried'][0]['country'][1]['treated']['ancient']['use'][2][1]['adjective'][1]['cookies'][3]['pine'][3]['cage']['brown']
 test: eval(data['flag']['missing'][1]['feed']['useful'][0][2]['mad'][1][3]['offer'][2]['widely'][6]['worried'][0]['country'][1]['treated']['ancient']['use'][2][1]['adjective'][1]['cookies'][3]['pine'][3]['cage']['brown'])
@@ -40,7 +46,7 @@ results: -1802407040
 ```
 ### looking for unique json snippet of nested key value pair
 ```
-$ python search.py random.json 'describe":false'
+$ python search.py random_with_arrays.json 'describe":false'
 search for: 'describe":false'
 path: ['flag']['missing'][1]['feed']['useful'][0][2]['mad'][1][3]['offer'][2]['widely'][6]['worried'][0]['country'][1]['treated']['ancient']['use'][2][1]['adjective'][1]['cookies'][3]['pine'][3]['cage']['electric'][1][3]['sleep'][0][6]['speak'][1]['unusual'][1][2][0]['call'][2]['standard'][3]['character'][0][1][0][0][2][0][0]['leaving']
 test: eval(data['flag']['missing'][1]['feed']['useful'][0][2]['mad'][1][3]['offer'][2]['widely'][6]['worried'][0]['country'][1]['treated']['ancient']['use'][2][1]['adjective'][1]['cookies'][3]['pine'][3]['cage']['electric'][1][3]['sleep'][0][6]['speak'][1]['unusual'][1][2][0]['call'][2]['standard'][3]['character'][0][1][0][0][2][0][0]['leaving'])
