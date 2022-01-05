@@ -2,25 +2,40 @@
 
 import json
 
-def search(data, search_str):
+
+def search_list(data, search_str):
     results = []
+    for i,v in enumerate(data):
+        json_data = json.dumps(v, separators=(',',':'))
+        if search_str in json_data: 
+            results.append((i,v))
+    return results
+
+
+def search_dict(data, search_str, root):
+    results = []
+    for k in data.keys():
+        v = data.get(k)
+        if search_str == k:
+            root = True
+            results.append((k,v))
+        json_data = json.dumps(v, separators=(',',':'))
+        if search_str in json_data:
+            results.append((k,v))
+    return results, root
+
+
+def search(data, search_str):
     root = False
     if type(data) == list:
-        for i,v in enumerate(data):
-            json_data = json.dumps(v, separators=(',',':'))
-            if search_str in json_data: 
-                results.append((i,v))
+        results = search_list(data, search_str)
     elif type(data) == dict:
-        for k in data.keys():
-            v = data.get(k)
-            if search_str == k:
-                root = True
-                results.append((k,v))
-            json_data = json.dumps(v, separators=(',',':'))
-            if search_str in json_data:
-                results.append((k,v))
+        results, root = search_dict(data, search_str, root)
+    else:
+        results = []
     return results, root
-                
+
+
 def path_builder(path):
     path_list_strings = []
     for i in path:
@@ -31,6 +46,7 @@ def path_builder(path):
             path_list_strings.append(f'''['{i}']''')
     format_path = ''.join(path_list_strings)
     return format_path
+
 
 def handler(raw_data, search_str):
     path = []
@@ -55,20 +71,24 @@ def handler(raw_data, search_str):
     return path
 
 
-
 if __name__ == "__main__":
 
     import sys
 
-    input_file = sys.argv[1]
-    search_string = sys.argv[2]
+    try:
+        input_file = sys.argv[1]
+    except Exception as e:
+        input_file = input("input file: ")
+
+    try:
+        search_string = sys.argv[2]
+    except Exception as e:
+        search_string = input("search string: ")
 
     with open(input_file) as f:
         raw_json_data = f.read()
 
-    #print(raw_json_data)
     dict_data = json.loads(raw_json_data)
-    #print(data_dict)
 
     path = handler(raw_json_data, search_string)
 
